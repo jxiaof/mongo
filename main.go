@@ -1,24 +1,26 @@
-<!--
- * @Descripttion: 
- * @version: 
- * @Author: hujianghong
- * @Date: 2022-01-26 18:08:29
- * @LastEditTime: 2022-01-26 23:49:28
--->
-- 思路: bson在golang中编写比较繁琐.
-  我的思路是将json转换为bson,贴近原生的mongodb操作
-  只要会写mongo查询语句就能很快很方便的操作mongodb
-- 功能: 提供对于mongo的简单增删改查操作
-- 注意: Mutil是一个操作类型,可以是insert,update,delete一个或者多个document
-- 注意: 针对mongo-driver操作做了简化,只保留经常使用的mongo操作,如果需要更复杂的操作需求,请使用mongo-driver提供的的接口
-- 放在github目的主要是为了方便查看.mongo-driver的接口比较简单,相比关系型数据库没有更复杂的操作,没必要再封装mongo-driver.
-我这样主要是写起来比较舒服熟悉,有那么一点mvc整套的舒畅感觉(.List / .Creat / .Get ...),好处就是不用去写繁琐的bson.
--  TODO: 1): 增加聚合查询 (aggregate)
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: 江小凡
+ * @Date: 2022-01-26 22:39:39
+ * @LastEditTime: 2022-01-26 23:53:08
+ */
+package main
 
+import (
+	"fmt"
+	"mongo/conf"
+	"mongo/crud"
+	"mongo/log"
+)
 
-使用方式: 如下所示或者查看main.go文件
+var dao crud.Crud
 
-```golang
+type doc struct {
+	Name string `bson:"name"`
+	Age  int    `bson:"age"`
+}
+
 func main() {
 	var err error
 	fmt.Println(conf.LOG_LEVEL)
@@ -84,4 +86,3 @@ func main() {
 	}
 	fmt.Println("删除文档", res4)
 }
-```
