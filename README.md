@@ -7,9 +7,13 @@
 -->
 
 // Idea: bson is tedious to write in golang, my idea is to convert json to bson, close to the native mongodb operation, as long as you can write mongo query statement can be very fast and convenient operation
+
 // Function: Provide simple create, update, read one or read list , delete and check operations for mongo
+
 // Note: Mutil is an operation type, can be insert, update, delete one or more documents
+
 // Note: For mongo-driver operations are simplified, only frequently used mongo operations are retained, if you need more complex operations, please use the interface provided by mongo-driver
+
 // TODO: 1): Add aggregate query
 
 Usage: as shown below or view the main.go file
