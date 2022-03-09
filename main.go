@@ -3,7 +3,7 @@
  * @version:
  * @Author: 江小凡
  * @Date: 2022-01-26 22:39:39
- * @LastEditTime: 2022-01-26 23:53:08
+ * @LastEditTime: 2022-03-09 22:30:54
  */
 package main
 
@@ -24,7 +24,7 @@ type doc struct {
 func main() {
 	var err error
 	fmt.Println(conf.LOG_LEVEL)
-	log.Log.Info("----- start mongo -----")
+	log.Log.Infof("----- start mongo -----")
 
 	dao = crud.NewCrud()
 	f, err := dao.CheckExist(conf.CollA, fmt.Sprintf(`{"name":"%s"}`, "江小凡"))

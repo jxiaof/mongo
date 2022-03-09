@@ -3,7 +3,7 @@
  * @version:
  * @Author: 江小凡
  * @Date: 2022-01-26 22:31:11
- * @LastEditTime: 2022-01-26 23:10:28
+ * @LastEditTime: 2022-03-09 22:38:02
  */
 package conf
 
@@ -30,7 +30,7 @@ var (
 
 var (
 	// mongo url
-	MONGO_URL = getEnv("MONGO_URL", "mongodb://localhost:27017")
+	MONGO_URI = getEnv("MONGO_URL", "mongodb://localhost:27017")
 	// 数据库名称
 	DB_NAME = getEnv("DB_NAME", "db_name")
 	// 数据库集合
